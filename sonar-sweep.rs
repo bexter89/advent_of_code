@@ -1,4 +1,4 @@
-const values = [
+let values = [
   196, 197, 176, 182, 179, 177, 171, 172, 170, 147, 143, 153, 158, 157, 147,
   151, 153, 159, 150, 167, 162, 160, 159, 161, 165, 150, 158, 157, 146, 141,
   137, 127, 140, 127, 115, 114, 116, 118, 127, 133, 141, 151, 150, 148, 146,
@@ -149,47 +149,21 @@ const values = [
   3650, 3648, 3649, 3653, 3655, 3650, 3651, 3650, 3685, 3656, 3670, 3687, 3696,
   3695, 3682, 3685, 3688, 3686, 3672, 3664, 3663, 3659, 3664, 3676, 3689, 3694,
   3697, 3713, 3705, 3706, 3725, 3724, 3723, 3728,
-];
+]
 
-function findIncreases(arr) {
-  let timesIncreased = 0;
+fn find_increases(arr: [i32]) -> i32 {
 
-  for (let i = 1; i < arr.length - 1; i++) {
-    let previousValue = arr[i - 1];
-    let currentValue = arr[i];
-    let nextValue = arr[i + 1];
+  let timesincreased: i32 = 0;
 
-    if (i === 1) {
-      if (currentValue > previousValue) {
-        timesIncreased++;
-      }
+  for (i, el) in arr.iter().enumerate() {
+    if i == 0 {
+      timesincreased++
     }
-    if (nextValue > currentValue) {
-      timesIncreased++;
+    if arr[i+1] > arr[i] {
+      timesincreased
     }
   }
-  return timesIncreased;
+  return timesincreased
 }
 
-//console.log(findIncreases(values));
-
-let smallTest = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
-
-function findThreeNumIncreases(arr) {
-  //look at sum of three numbers at a time
-  // only increase if sum of 3 nums in larger than sum of next three nums
-
-  let timesIncreased = 0;
-
-  for (let i = 0; i < arr.length - 3; i++) {
-    let currentSum = arr[i] + arr[i + 1] + arr[i + 2];
-    let nextThreeNumSum = arr[i + 1] + arr[i + 2] + arr[i + 3];
-
-    if (currentSum < nextThreeNumSum) {
-      timesIncreased++;
-    }
-  }
-  return timesIncreased;
-}
-
-console.log(findThreeNumIncreases(values));
+println!(find_increases(values));
