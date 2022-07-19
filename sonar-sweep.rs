@@ -1,3 +1,4 @@
+fn find_increases() -> i32 {
 let values = [
   196, 197, 176, 182, 179, 177, 171, 172, 170, 147, 143, 153, 158, 157, 147,
   151, 153, 159, 150, 167, 162, 160, 159, 161, 165, 150, 158, 157, 146, 141,
@@ -151,7 +152,7 @@ let values = [
   3697, 3713, 3705, 3706, 3725, 3724, 3723, 3728,
 ]
 
-fn find_increases(arr: [i32]) -> i32 {
+
 
   let timesincreased: i32 = 0;
 
@@ -163,7 +164,6 @@ fn find_increases(arr: [i32]) -> i32 {
       timesincreased
     }
   }
-  return timesincreased
-}
 
-println!(find_increases(values));
+  println!(find_increases(values));
+}

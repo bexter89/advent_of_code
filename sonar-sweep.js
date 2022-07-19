@@ -163,15 +163,16 @@ function findIncreases(arr) {
       if (currentValue > previousValue) {
         timesIncreased++;
       }
-    }
-    if (nextValue > currentValue) {
-      timesIncreased++;
+    } else {
+      if (nextValue > currentValue) {
+        timesIncreased++;
+      }
     }
   }
   return timesIncreased;
 }
 
-//console.log(findIncreases(values));
+console.log(findIncreases(values));
 
 let smallTest = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
 
